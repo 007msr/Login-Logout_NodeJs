@@ -1,0 +1,41 @@
+.main_box {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  height: 35%;
+  width: 40%;
+  margin-top: 25vh;
+  margin-left: 30vw;
+  background-color: blueviolet;
+  color: white;
+  border: 2px solid violet;
+}
+
+.body {
+  background-color: black;
+}
+
+.navbar-nav {
+  border: 1px solid red;
+}
+.navbar-collapse {
+  margin-left: 70%;
+}
+.container-fluid {
+  border: 2px solid red;
+  display: flex;
+  justify-content: space-between;
+}
+.container {
+  margin-left: 10%;
+}
+.login {
+  background-color: white;
+  margin-left: 10%;
+}
+#btn {
+  background-color: red;
+  border-radius: 10px;
+  margin-top: 5px;
+  color: white;
+}
