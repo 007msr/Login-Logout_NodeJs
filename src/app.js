@@ -55,13 +55,18 @@ app.post("/login", async (req, res) => {
     const loginemail = req.body.email;
     const loginpassword = req.body.password;
     const userdetail = await UserInfo.findOne({ email: loginemail });
-    console.log(userdetail);
+
     if (userdetail == null) {
       res.send("login unauthenticated");
     } else {
       if (userdetail.password == loginpassword) {
-        console.log("login Succesful");
-        res.render("index");
+        res.render("about", {
+          id: userdetail.id,
+          name: userdetail.username,
+          email: userdetail.email,
+          phone: userdetail.phone_no,
+          password: userdetail.password,
+        });
       } else {
         res.send("login unauthenticated");
         console.log("login unauthenticated");
@@ -73,6 +78,9 @@ app.post("/login", async (req, res) => {
 });
 app.get("/login", (req, res) => {
   res.render("login");
+});
+app.get("/about", (req, res) => {
+  res.render("about");
 });
 app.listen(PORT, (req, res) => {
   console.log("server is running");
